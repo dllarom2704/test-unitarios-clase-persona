@@ -1,8 +1,8 @@
 package es.iessoterohernandez.daw.endes.ejerciciosUnitarias;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ public class PersonaTest {
 		persona.setSexo('H');
 		persona.setPeso(73);
 		persona.setAltura(1.73);
-		assertEquals(persona.PESO_IDEAL, persona.calcularIMC());
+		assertEquals(Persona.PESO_IDEAL, persona.calcularIMC());
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ public class PersonaTest {
 		persona.setSexo('H');
 		persona.setPeso(58);
 		persona.setAltura(1.73);
-		assertEquals(persona.INFRAPESO, persona.calcularIMC());
+		assertEquals(Persona.INFRAPESO, persona.calcularIMC());
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class PersonaTest {
 		persona.setSexo('H');
 		persona.setPeso(92);
 		persona.setAltura(1.78);
-		assertEquals(persona.SOBREPESO, persona.calcularIMC());
+		assertEquals(Persona.SOBREPESO, persona.calcularIMC());
 	}
 	
 	@Test
