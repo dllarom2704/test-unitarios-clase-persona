@@ -12,14 +12,11 @@ public class PersonaTest {
 	
 	@BeforeEach
     public void setUp() {
-        persona = new Persona();
+        persona = new Persona("David", 18, 'H', 92, 1.78);
     }
 	
 	@Test
 	public void calcularIMCTestPesoIdeal() {
-		persona.setNombre("Jose Luis");
-		persona.setEdad(50);
-		persona.setSexo('H');
 		persona.setPeso(73);
 		persona.setAltura(1.73);
 		assertEquals(Persona.PESO_IDEAL, persona.calcularIMC());
@@ -27,9 +24,6 @@ public class PersonaTest {
 	
 	@Test
 	public void calcularIMCTestInfraPeso() {
-		persona.setNombre("Jesus");
-		persona.setEdad(18);
-		persona.setSexo('H');
 		persona.setPeso(58);
 		persona.setAltura(1.73);
 		assertEquals(Persona.INFRAPESO, persona.calcularIMC());
@@ -37,31 +31,17 @@ public class PersonaTest {
 	
 	@Test
 	public void calcularIMCTestSobrePeso() {
-		persona.setNombre("David");
-		persona.setEdad(18);
-		persona.setSexo('H');
-		persona.setPeso(92);
-		persona.setAltura(1.78);
 		assertEquals(Persona.SOBREPESO, persona.calcularIMC());
 	}
 	
 	@Test
 	public void esMayorEdad() {
-		persona.setNombre("David");
-		persona.setEdad(18);
-		persona.setSexo('H');
-		persona.setPeso(92);
-		persona.setAltura(1.78);
 		assertTrue(persona.esMayorDeEdad());
 	}
 	
 	@Test
 	public void noEsMayorEdad() {
-		persona.setNombre("David");
 		persona.setEdad(17);
-		persona.setSexo('H');
-		persona.setPeso(92);
-		persona.setAltura(1.78);
 		assertFalse(persona.esMayorDeEdad());
 	}
 }
